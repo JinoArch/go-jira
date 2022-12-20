@@ -279,10 +279,16 @@ type Progress struct {
 	Percent  int `json:"percent" structs:"percent"`
 }
 
+// Parent Fields
+type ParentFields struct {
+	IssueType *IssueType `json:"issuetype,omitempty" structs:"issuetype,omitempty"`
+}
+
 // Parent represents the parent of a Jira issue, to be used with subtask issue types.
 type Parent struct {
 	ID  string `json:"id,omitempty" structs:"id,omitempty"`
 	Key string `json:"key,omitempty" structs:"key,omitempty"`
+	Fields *ParentFields `json:"fields,omitempty" structs:"fields,omitempty"`
 }
 
 // Time represents the Time definition of Jira as a time.Time of go
